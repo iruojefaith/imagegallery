@@ -51,7 +51,7 @@ const Image = ({ image, index, moveImage }) => {
       onDragStart={handleDrag}
       alt={image.id}
       src={image.img}
-      className='w-[100%] border rounded-lg block'
+      className='w-[100%] border rounded-lg block my-5 '
     />
   );
 };
@@ -59,7 +59,13 @@ const Image = ({ image, index, moveImage }) => {
 const Container = ({ filterImages, setFilteredImages }) => {
   const RenderImage = (image, index) => {
     return image ? (
-      <Image image={image} index={index} key={image.id} moveImage={moveImage} />
+      <Image
+        image={image}
+        index={index}
+        key={image.id}
+        moveImage={moveImage}
+        className='my-5'
+      />
     ) : null;
   };
 
@@ -75,7 +81,7 @@ const Container = ({ filterImages, setFilteredImages }) => {
     );
   };
   return (
-    <div className='gallery gap-2 md:gap-4 py-0 px-[12px] '>
+    <div className='gallery gap-2 md:gap-4 my-[5px] px-[12px] '>
       {filterImages.map(RenderImage)}
     </div>
   );

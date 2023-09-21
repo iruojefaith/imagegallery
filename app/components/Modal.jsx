@@ -68,10 +68,10 @@ export const Modal = () => {
       >
         <div class='relative w-full max-w-md max-h-full'>
           {/*-- Modal content --*/}
-          <div class='relative bg-white rounded-lg shadow dark:bg-gray-700'>
+          <div class='relative bg-white rounded-lg shadow dark:bg-gray-100 '>
             <button
               type='button'
-              class='absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white'
+              class='absolute top-3 right-2.5 text-[#0f3d18] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white'
               data-modal-hide='authentication-modal'
             >
               <svg
@@ -93,14 +93,14 @@ export const Modal = () => {
               <span class='sr-only'>Close modal</span>
             </button>
             <div class='px-6 py-6 lg:px-8'>
-              <h3 class='mb-4 text-xl font-medium text-gray-900 dark:text-white'>
+              <h3 class='mb-4 text-xl font-medium text-[#0f3d18] dark:text-[#0f3d18]'>
                 Sign in to our platform
               </h3>
               <form class='space-y-6' action='#'>
                 <div>
                   <label
                     htmlfor='email'
-                    class='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+                    class='block mb-2 text-sm font-medium text-[#0f3d18] dark:text-[#0f3d18]'
                   >
                     Your email
                   </label>
@@ -108,7 +108,7 @@ export const Modal = () => {
                     type='email'
                     name='email'
                     id='email'
-                    class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                    class=' border border-[#0f3d18] text-[#0f3d18] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 dark:text-[#0f3d18]'
                     placeholder='name@company.com'
                     onChange={handleEmail}
                     required
@@ -117,7 +117,7 @@ export const Modal = () => {
                 <div>
                   <label
                     htmlfor='password'
-                    class='block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+                    class='block mb-2 text-sm font-medium text-[#0f3d18] dark:text-[#0f3d18d8]'
                   >
                     Your password
                   </label>
@@ -126,7 +126,7 @@ export const Modal = () => {
                     name='password'
                     id='password'
                     placeholder='••••••••'
-                    class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                    class='border border-[#0f3d18] text-[#0f3d18] text-sm rounded-lg focus:ring-[#0f3d18]focus:border-blue-500 block w-full p-2.5  dark:placeholder-[#0f3d18] '
                     onChange={handlePassword}
                     required
                   />
@@ -138,27 +138,24 @@ export const Modal = () => {
                         id='remember'
                         type='checkbox'
                         value=''
-                        class='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800'
+                        class='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#8af09e] dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-[#0f3d18] dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800'
                         required
                       />
                     </div>
                     <label
                       for='remember'
-                      class='ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+                      class='ml-2 text-sm font-medium text-[#0f3d18] dark:text-[#0f3d18e3]'
                     >
                       Remember me
                     </label>
                   </div>
-                  <a
-                    href='#'
-                    class='text-sm text-blue-700 hover:underline dark:text-blue-500'
-                  >
+                  <a href='#' class='text-sm hover:underline text-[#0f3d18]'>
                     Lost Password?
                   </a>
                 </div>
                 <button
                   type='submit'
-                  class='w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+                  class='w-full text-white bg-[#0f3d18] hover:bg-[#0f3d18ec] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0f3d18]/100 dark:hover:bg-[#0f3d18] dark:focus:ring-blue-800'
                   onClick={handleSubmit}
                 >
                   Register
@@ -167,7 +164,7 @@ export const Modal = () => {
                   Not registered?{" "}
                   <a
                     href='#'
-                    class='text-blue-700 hover:underline dark:text-blue-500'
+                    class='text-[#0f3d18] hover:underline dark:text-[#0f3d18]'
                     onClick={handleModal}
                   >
                     Create account
