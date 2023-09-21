@@ -8,9 +8,9 @@ const Search = () => {
   return (
     <div className='my-10'>
       <div className='max-w-md mx-auto'>
-        <div className='relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-none overflow-hidden border border-white'>
+        <div className='px-6 md:px-0 relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-none overflow-hidden border border-white'>
           <input
-            className='peer h-full w-[50rem] outline-none text-sm text-white px-2 bg-transparent '
+            className='peer h-full w-full md:w-[53rem] outline-none text-sm text-white px-2 bg-transparent '
             type='text'
             value={searchQuery || ""}
             placeholder='Search Images'

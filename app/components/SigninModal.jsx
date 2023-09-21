@@ -19,6 +19,11 @@ export const SigninModal = () => {
     setPassword(value);
   };
 
+  const handleModal = () => {
+    toggleModal()
+    toggleSignIn()
+  }
+
   const handleSubmit = async () => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
@@ -144,8 +149,18 @@ export const SigninModal = () => {
                 class='w-full text-white bg-[#0f3d18] hover:bg-[#0f3d18ec] focus:ring-4 focus:outline-none focus:ring-[#84ee99] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0f3d18]/100 dark:hover:bg-[#0f3d18] dark:focus:ring-[#0f3d18fd]'
                 onClick={handleSubmit}
               >
-                Register
+                Log in
               </button>
+              <div class='text-sm font-medium text-black '>
+                  Not registered?{" "}
+                  <a
+                    href='#'
+                    class='text-[#0f3d18] hover:underline dark:text-[#0f3d18]'
+                    onClick={handleModal}
+                  >
+                    Create account
+                  </a>
+                </div>
             </form>
           </div>
         </div>

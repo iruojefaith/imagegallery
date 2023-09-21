@@ -31,6 +31,9 @@ export const Modal = () => {
       console.log(user);
       toggleModal();
     } catch (error) {
+      if (error.message === 'Firebase: Error (auth/email-already-in-use).'){
+        alert('This user already exist!')
+      }
       console.log(error.message);
     }
   };
@@ -77,7 +80,7 @@ export const Modal = () => {
             </button>
             <div class='px-6 py-6 lg:px-8'>
               <h3 class='mb-4 text-xl font-medium text-[#0f3d18] dark:text-[#0f3d18]'>
-                Sign in to our platform
+                Create account
               </h3>
               <form class='space-y-6' action='#'>
                 <div>
@@ -120,16 +123,16 @@ export const Modal = () => {
                   class='w-full text-white bg-[#0f3d18] hover:bg-[#0f3d18ec] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0f3d18]/100 dark:hover:bg-[#0f3d18] dark:focus:ring-blue-800'
                   onClick={handleSubmit}
                 >
-                  Login
+                  Register
                 </button>
                 <div class='text-sm font-medium text-black '>
-                  Not registered?{" "}
+                  Already registered?{" "}
                   <a
                     href='#'
                     class='text-[#0f3d18] hover:underline dark:text-[#0f3d18]'
                     onClick={handleModal}
                   >
-                    Create account
+                    Log in
                   </a>
                 </div>
               </form>

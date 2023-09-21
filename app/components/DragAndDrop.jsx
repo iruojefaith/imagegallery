@@ -48,6 +48,7 @@ const Image = ({ image, index, moveImage }) => {
   return (
     <img
       ref={ImageRef}
+      onTouchStart={handleDrag}
       onDragStart={handleDrag}
       alt={image.id}
       src={image.img}
@@ -62,7 +63,7 @@ const Container = ({ filterImages, setFilteredImages }) => {
       <Image
         image={image}
         index={index}
-        key={image.id}
+        key={`image.title-${index}`}
         moveImage={moveImage}
         className='my-5'
       />
