@@ -21,12 +21,21 @@
   margin: auto;
 }
 .gallery {
-  -webkit-column-count: 4;
+  /* -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4 !important;
   -webkit-column-width: 33%;
   -moz-column-width: 33%;
-  column-width: 33%;
+  column-width: 33%; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+}
+
+.img {
+  width: 22.24vw;
+  object-fit: cover;
 }
 .image {
   -webkit-animation: all 350ms ease;

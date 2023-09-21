@@ -52,7 +52,7 @@ const Image = ({ image, index, moveImage }) => {
       onDragStart={handleDrag}
       alt={image.id}
       src={image.img}
-      className='w-[100%] border rounded-lg block my-5 '
+      className='w-[100%] img border rounded-lg block my-5'
     />
   );
 };
@@ -82,7 +82,7 @@ const Container = ({ filterImages, setFilteredImages }) => {
     );
   };
   return (
-    <div className='gallery grid md:grid-cols-4 gap-2 md:gap-4 my-[5px] px-[12px] '>
+    <div className='gallery flex flex-wrap gap-2 md:gap-4 my-[5px] px-[12px] '>
       {filterImages.map(RenderImage)}
     </div>
   );
