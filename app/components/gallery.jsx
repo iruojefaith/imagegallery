@@ -9,10 +9,12 @@ import { TouchBackend } from "react-dnd-touch-backend";
 
 const Gallery = ({ data }) => {
   const [filterImages, setFilteredImages] = useState(data);
+  const { loading, setLoading } = useContext(AuthContext);
   const { searchQuery } = useContext(AuthContext);
 
   useEffect(() => {
     const handleSearch = () => {
+      setLoading(true);
       console.log(searchQuery);
       if (searchQuery.trim() === "") {
         setFilteredImages(data);
@@ -22,6 +24,7 @@ const Gallery = ({ data }) => {
         });
         console.log(filterImages.img);
         setFilteredImages(matchingImages);
+        setLoading(false);
       }
     };
     handleSearch();
@@ -38,6 +41,7 @@ const Gallery = ({ data }) => {
   return (
     <>
       <Header />
+
       <DndProvider backend={backend}>
         <Container
           filterImages={filterImages}

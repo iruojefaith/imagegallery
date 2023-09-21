@@ -1,6 +1,8 @@
+"use client";
+
 import Gallery from "./components/gallery";
 
-export default function Page() {
+const Page = () => {
   const data = [
     {
       title: "washing machine",
@@ -52,4 +54,6 @@ export default function Page() {
       <Gallery data={data} />
     </div>
   );
-}
+};
+
+export default Page;

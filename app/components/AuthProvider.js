@@ -16,9 +16,12 @@ export const AuthContext = createContext({
   setSigninmodal: () => {},
   searchQuery: "",
   setSearchQuery: () => {},
+  loading: false,
+  setLoading: () => {},
 });
 
 const AuthContextProvider = ({ children }) => {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
   const [logged, setLogged] = useState(false);
   const [modal, setModal] = useState(false);
@@ -63,6 +66,8 @@ const AuthContextProvider = ({ children }) => {
         signinmodal,
         setSearchQuery,
         searchQuery,
+        loading,
+        setLoading,
       }}
     >
       {children}

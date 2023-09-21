@@ -6,8 +6,8 @@ import { useContext, useRef } from "react";
 import { AuthContext } from "./AuthProvider";
 
 const Image = ({ image, index, moveImage }) => {
-  const { logged, toggleModal } = useContext(AuthContext);
-
+  const { logged, toggleModal, loading } = useContext(AuthContext);
+  console.log(loading);
   const ImageRef = useRef(null);
   const [, drop] = useDrop({
     accept: "Image",
