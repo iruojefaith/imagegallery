@@ -6,7 +6,7 @@ import { auth } from "../firebase";
 import { AuthContext } from "./AuthProvider";
 
 export const SigninModal = () => {
-  const { toggleModal } = useContext(AuthContext);
+  const { toggleModal, toggleSignIn } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -59,7 +59,6 @@ export const SigninModal = () => {
           <button
             type='button'
             class='absolute top-3 right-2.5 text-[#0f3d18] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white'
-            data-modal-hide='authentication-modal'
           >
             <svg
               class='w-3 h-3'
@@ -145,7 +144,7 @@ export const SigninModal = () => {
                 class='w-full text-white bg-[#0f3d18] hover:bg-[#0f3d18ec] focus:ring-4 focus:outline-none focus:ring-[#84ee99] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0f3d18]/100 dark:hover:bg-[#0f3d18] dark:focus:ring-[#0f3d18fd]'
                 onClick={handleSubmit}
               >
-                Login
+                Register
               </button>
             </form>
           </div>

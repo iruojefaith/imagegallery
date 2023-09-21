@@ -120,7 +120,7 @@ export const Modal = () => {
                   class='w-full text-white bg-[#0f3d18] hover:bg-[#0f3d18ec] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0f3d18]/100 dark:hover:bg-[#0f3d18] dark:focus:ring-blue-800'
                   onClick={handleSubmit}
                 >
-                  Register
+                  Login
                 </button>
                 <div class='text-sm font-medium text-black '>
                   Not registered?{" "}
