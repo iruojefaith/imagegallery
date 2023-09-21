@@ -6,9 +6,10 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import Container from "./DragAndDrop";
 import { AuthContext } from "./AuthProvider";
 import { TouchBackend } from "react-dnd-touch-backend";
+import { dataItems } from "./data.js";
 
-const Gallery = ({ data }) => {
-  const [filterImages, setFilteredImages] = useState(data);
+const Gallery = () => {
+  const [filterImages, setFilteredImages] = useState(dataItems);
   const { loading, setLoading } = useContext(AuthContext);
   const { searchQuery } = useContext(AuthContext);
 
@@ -17,7 +18,7 @@ const Gallery = ({ data }) => {
       setLoading(true);
       console.log(searchQuery);
       if (searchQuery.trim() === "") {
-        setFilteredImages(data);
+        setFilteredImages(dataItems);
       } else {
         const matchingImages = filterImages.filter((item) => {
           return item.img.toLowerCase().includes(searchQuery.toLowerCase());
@@ -31,12 +32,10 @@ const Gallery = ({ data }) => {
   }, [searchQuery]);
 
   const device = () => {
-    if (window !== undefined) {
-      if ("ontouchstart" in window) {
-        return true;
-      }
-      return false;
+    if ("ontouchstart" in window) {
+      return true;
     }
+    return false;
   };
 
   const backend = device() ? TouchBackend : HTML5Backend;
