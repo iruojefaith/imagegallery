@@ -31,11 +31,14 @@ const Gallery = ({ data }) => {
   }, [searchQuery]);
 
   const device = () => {
-    if ("ontouchstart" in window) {
-      return true;
+    if (window !== undefined) {
+      if ("ontouchstart" in window) {
+        return true;
+      }
+      return false;
     }
-    return false;
   };
+
   const backend = device() ? TouchBackend : HTML5Backend;
 
   return (
