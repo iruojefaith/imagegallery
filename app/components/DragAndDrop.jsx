@@ -82,7 +82,7 @@ const Container = ({ filterImages, setFilteredImages }) => {
     );
   };
   return (
-    <div className='gallery grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 my-[5px] px-[12px] '>
+    <div className='gallery grid md:grid-cols-4 gap-2 md:gap-4 my-[5px] px-[12px] '>
       {filterImages.map(RenderImage)}
     </div>
   );
