@@ -23,7 +23,7 @@
 .gallery {
   -webkit-column-count: 4;
   -moz-column-count: 4;
-  column-count: 4;
+  column-count: 4 !important;
   -webkit-column-width: 33%;
   -moz-column-width: 33%;
   column-width: 33%;
