@@ -42,33 +42,16 @@ export const Modal = () => {
   return (
     <>
       {" "}
-      {/* <div>
-        <input
-          type='email'
-          name='email'
-          onChange={handleEmail}
-          className='p-10 text-black'
-        />{" "}
-        <br />
-        <input
-          type='password'
-          name='password'
-          onChange={handlePassword}
-          className='p-10 text-black'
-        />
-        <button onClick={handleSubmit}>register</button>
-        <p>
-          have an account ?<span onClick={handleModal}>Signin here</span>
-        </p>
-      </div> */}
       {/*-- Main modal  */}
       <div
         aria-hidden='true'
-        class='fixed top-0 left-0 right-0 z-50  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full'
+        class='fixed w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] Modal backdrop-blur-sm
+       
+        '
       >
-        <div class='relative w-full max-w-md max-h-full'>
+        <div class='relative w-full max-w-md max-h-full '>
           {/*-- Modal content --*/}
-          <div class='relative bg-white rounded-lg shadow dark:bg-gray-100 '>
+          <div class='relative bg-white rounded-lg shadow dark:bg-gray-100 Modal-content '>
             <button
               type='button'
               class='absolute top-3 right-2.5 text-[#0f3d18] bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white'
@@ -131,28 +114,7 @@ export const Modal = () => {
                     required
                   />
                 </div>
-                <div class='flex justify-between'>
-                  <div class='flex items-start'>
-                    <div class='flex items-center h-5'>
-                      <input
-                        id='remember'
-                        type='checkbox'
-                        value=''
-                        class='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#8af09e] dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-[#0f3d18] dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800'
-                        required
-                      />
-                    </div>
-                    <label
-                      for='remember'
-                      class='ml-2 text-sm font-medium text-[#0f3d18] dark:text-[#0f3d18e3]'
-                    >
-                      Remember me
-                    </label>
-                  </div>
-                  <a href='#' class='text-sm hover:underline text-[#0f3d18]'>
-                    Lost Password?
-                  </a>
-                </div>
+
                 <button
                   type='submit'
                   class='w-full text-white bg-[#0f3d18] hover:bg-[#0f3d18ec] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0f3d18]/100 dark:hover:bg-[#0f3d18] dark:focus:ring-blue-800'
@@ -160,7 +122,7 @@ export const Modal = () => {
                 >
                   Register
                 </button>
-                <div class='text-sm font-medium text-gray-500 dark:text-gray-300'>
+                <div class='text-sm font-medium text-black '>
                   Not registered?{" "}
                   <a
                     href='#'
