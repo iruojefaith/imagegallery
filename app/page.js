@@ -42,6 +42,10 @@ export default function Page() {
       title: "bird",
       img: "https://images.pexels.com/photos/18360087/pexels-photo-18360087/free-photo-of-bird-animal-grass-blur.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     },
+    {
+      title: "nature",
+      img: "https://images.pexels.com/photos/16621442/pexels-photo-16621442/free-photo-of-art-pattern-texture-shrub.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    },
   ];
   return (
     <div>

@@ -12,7 +12,7 @@
   @apply rounded-md py-3 px-10 text-white transition-all text-center text-sm flex items-center justify-center border border-rose-700 my-6 bg-rose-700 hover:bg-white hover:text-rose-700;
 }
 .head_text {
-  @apply text-4xl font-normal leading-10 text-white md:text-5xl;
+  @apply text-3xl font-normal leading-10 text-white md:text-4xl;
 }
 .desc {
   @apply text-xs text-white md:text-[1.1rem] leading-6 mt-4;

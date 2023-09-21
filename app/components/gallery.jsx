@@ -1,42 +1,49 @@
 "use client";
-import { useState } from "react";
-import Search from "./Search";
+import { useContext, useEffect, useState } from "react";
+import { Header } from "./Header";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import Container from "./DragAndDrop";
+import { AuthContext } from "./AuthProvider";
+import { TouchBackend } from "react-dnd-touch-backend";
 
 const Gallery = ({ data }) => {
   const [filterImages, setFilteredImages] = useState(data);
-  const [searchQuery, setSearchQuery] = useState("");
+  const { searchQuery } = useContext(AuthContext);
 
-  const handleSearch = () => {
-    if (searchQuery.trim() === "") {
-      setFilteredImages(data);
-    } else {
-      const matchingImages = data.filter((data) =>
-        data.img.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      console.log(data);
-      setFilteredImages(matchingImages);
+  useEffect(() => {
+    const handleSearch = () => {
+      console.log(searchQuery);
+      if (searchQuery.trim() === "") {
+        setFilteredImages(data);
+      } else {
+        const matchingImages = filterImages.filter((item) => {
+          return item.img.toLowerCase().includes(searchQuery.toLowerCase());
+        });
+        console.log(filterImages.img);
+        setFilteredImages(matchingImages);
+      }
+    };
+    handleSearch();
+  }, [searchQuery]);
+
+  const device = () => {
+    if ("ontouchstart" in window) {
+      return true;
     }
+    return false;
   };
+  const backend = device() ? TouchBackend : HTML5Backend;
+
   return (
     <>
-      <Search
-        handleSearch={handleSearch}
-        setSearchQuery={setSearchQuery}
-        searchQuery={searchQuery}
-      />
-
-      <div className='gallery gap-2 md:gap-4 py-0 px-[12px]'>
-        {data.map((image, id) => (
-          <div className='image' key={id}>
-            <img
-              src={image.img}
-              alt={image.title}
-              key={id}
-              className='w-[100%] border rounded-lg block '
-            />
-          </div>
-        ))}
-      </div>
+      <Header />
+      <DndProvider backend={backend}>
+        <Container
+          filterImages={filterImages}
+          setFilteredImages={setFilteredImages}
+        />
+      </DndProvider>
     </>
   );
 };
